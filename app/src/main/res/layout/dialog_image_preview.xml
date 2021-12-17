@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ng.devtamuno.unsplash.views.custom.AspectRatioImageView
+        android:id="@+id/aspectRatioImageView"
+        android:layout_width="400dp"
+        android:layout_height="500dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/ic_image" />
+
+    <View
+        android:id="@+id/transparentView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@id/aspectRatioImageView"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="15dp"
+        android:alpha="0.3921568627"
+        android:background="@color/matt_black" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/aspectRatioImageView"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="25dp"
+        android:drawablePadding="4dp"
+        android:ellipsize="marquee"
+        android:gravity="center_vertical"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textStyle="italic"
+        app:drawableStartCompat="@drawable/ic_image"
+        tools:text="username" />
+
+</RelativeLayout>

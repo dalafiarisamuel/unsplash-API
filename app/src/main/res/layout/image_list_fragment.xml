@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorActivityWhiteBackground"
+        tools:context=".views.fragment.ImageListFragment">
+
+
+        <RelativeLayout
+            android:id="@+id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="21dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/backArrow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_round_arrow"
+                android:visibility="gone"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/backArrowText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/backArrow"
+                android:layout_alignTop="@id/backArrow"
+                android:layout_toEndOf="@id/backArrow"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="@string/unsplash_images"
+                android:textColor="@color/matt_black"
+                android:textSize="22sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/searchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_layout"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="21dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/search_images"
+            android:textColor="@color/matt_black"
+            android:textSize="13sp" />
+
+        <RelativeLayout
+            android:id="@+id/searchBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/searchText"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/panInputField"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@id/search_button"
+                android:background="@drawable/edit_text_bg"
+                android:drawableStart="@drawable/ic_image"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/search_image_hint"
+                android:imeOptions="actionSearch"
+                android:inputType="textCapSentences"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="10dp"
+                android:singleLine="true"
+                android:textColor="@color/matt_black"
+                android:textSize="15sp" />
+
+            <ImageButton
+                android:id="@+id/search_button"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignTop="@id/panInputField"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/edit_text_bg"
+                android:src="@drawable/ic_search"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </RelativeLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/chipScroller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/searchBox"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="21dp"
+            android:scrollbars="none">
+
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/popularGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:chipSpacing="5dp"
+                app:singleLine="true"
+                app:singleSelection="true"
+                tools:checkedChip="@id/currentEventsChoice">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/currentEventsChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/current_events"
+                    android:textColor="@color/matt_black" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/natureChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nature"
+                    android:textColor="@color/matt_black" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/fashionChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fashion"
+                    android:textColor="@color/matt_black" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/technologyChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/technology"
+                    android:textColor="@color/matt_black" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/peopleChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/people"
+                    android:textColor="@color/matt_black" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/filmChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/film"
+                    android:textColor="@color/matt_black" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/travelChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/travel"
+                    android:textColor="@color/matt_black" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/historyChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/history"
+                    android:textColor="@color/matt_black" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/animalChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/animals"
+                    android:textColor="@color/matt_black" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/foodAndDrinkChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/food_and_drink"
+                    android:textColor="@color/matt_black" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/spiritualityChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/spirituality"
+                    android:textColor="@color/matt_black" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/architectureChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/architecture"
+                    android:textColor="@color/matt_black" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/athleticsChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/athletics"
+                    android:textColor="@color/matt_black" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/businessAndWorkChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/business_and_work"
+                    android:textColor="@color/matt_black" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/interiorChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/interior"
+                    android:textColor="@color/matt_black" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/experimentalChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/experimental"
+                    android:textColor="@color/matt_black" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/texturesAndPatternsChoice"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textures_and_patterns"
+                    android:textColor="@color/matt_black" />
+
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chipScroller"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="21dp"
+            android:overScrollMode="never"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            tools:itemCount="15"
+            tools:listitem="@layout/image_item_view"
+            tools:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/no_result_display"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/chipScroller"
+            android:layout_gravity="center"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/no_item_circle_shape" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:srcCompat="@drawable/ic_image_search"
+                        app:tint="@color/colorActivityWhiteBackground" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="@string/searched_item_not_found"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/scroll_to_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_north"
+            android:visibility="gone"
+            app:backgroundTint="@color/colorPrimary"
+            app:borderWidth="2dp"
+            app:useCompatPadding="true"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+
+</layout>

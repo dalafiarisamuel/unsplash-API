@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/imageListFragment">
+
+    <fragment
+        android:id="@+id/imageListFragment"
+        android:name="ng.devtamuno.unsplash.views.fragment.ImageListFragment"
+        android:label="ImageListFragment"
+        tools:layout="@layout/image_list_fragment" />
+</navigation>
