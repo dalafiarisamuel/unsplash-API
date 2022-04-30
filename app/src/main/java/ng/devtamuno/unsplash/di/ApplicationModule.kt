@@ -30,6 +30,6 @@ object ApplicationModule {
 
     @[Provides Singleton]
     fun provideBlurHash(@ApplicationContext context: Context) =
-        BlurHash(context, lruSize = 20, punch = 1F)
+        BlurHash(context, lruSize = 1000, punch = 1F)
 
 }

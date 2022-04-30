@@ -109,9 +109,4 @@ class ImagePreviewFragment : DialogFragment() {
         }
 
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        blurHash.clean()
-    }
 }

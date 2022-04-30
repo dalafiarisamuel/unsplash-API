@@ -123,5 +123,6 @@ class ImageListFragment : Fragment(R.layout.image_list_fragment), ImageAdapter.O
     override fun onDestroy() {
         super.onDestroy()
         blurHash.clean()
+
     }
 }
