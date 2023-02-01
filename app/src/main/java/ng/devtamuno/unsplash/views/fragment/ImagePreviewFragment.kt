@@ -94,7 +94,7 @@ class ImagePreviewFragment : DialogFragment() {
                 photo?.description ?: photo?.alternateDescription ?: photo?.user?.name ?: ""
             description.isSelected = true
             transparentView.setBackgroundColor(Color.parseColor(photo?.color ?: "#000000"))
-            transparentView.alpha = 0.3921568627F
+            transparentView.alpha = 0.39215687F
 
         } ?: dismiss()
 
